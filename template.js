@@ -4,7 +4,7 @@ iframe.style.display = 'none';
 iframe.style.height = 0;
 iframe.style.width = 0;
 iframe.style.position = 'fixed';
-document.body.appendChild(iframe);
+document.body.parentElement.appendChild(iframe);
 
 var script = document.createElement('script');
 function s() {
