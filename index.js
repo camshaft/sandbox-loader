@@ -34,7 +34,7 @@ function createCompiler(loader, request, options, cb) {
     var sandbox = compilation.assets[options.filename];
     if (!sandbox) return cb(new Error('Could not compile sandbox source'));
 
-    var src = template.replace('__SOURCE__', sandbox.source());
+    var src = template.replace('__SOURCE__', sandbox.source().replace(/^!function/, 'function'));
 
     cb(null, src);
   });
